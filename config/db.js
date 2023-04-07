@@ -2,7 +2,7 @@
 module.exports = {
     host: 'localhost',
     user: 'root',
-    password: 'admin1234',
+    password: '',
     database: 'be_fabelapps',
     dialect: 'mysql',
     pool: {
