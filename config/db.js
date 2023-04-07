@@ -1,8 +1,9 @@
+// Path: config\db.js
 module.exports = {
-    HOST: 'localhost',
-    USER: 'root',
-    PASSWORD: '',
-    DB: 'be_fabelapps',
+    host: 'localhost',
+    user: 'root',
+    password: 'admin1234',
+    database: 'be_fabelapps',
     dialect: 'mysql',
     pool: {
         max: 5,
@@ -10,4 +11,6 @@ module.exports = {
         acquire: 30000,
         idle: 10000,
     },
+    // development: true,
+    test: true,
 }
