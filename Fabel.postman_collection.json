@@ -1,0 +1,571 @@
+{
+	"info": {
+		"_postman_id": "719d0316-7db8-4eb3-b357-46301bc6074d",
+		"name": "Fabel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "AddQuiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question\":\"apa aku manuk\", \r\n    \"a\":\"akal\",\r\n    \"b\":\"bykan\",\r\n    \"c\":\"api\", \r\n    \"d\":\"yaa rr\", \r\n    \"key\":\"a\", \r\n    \"bookId\": 1 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/quiz",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetQuiz",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\":\"apa aku manuk\", \r\n    \"subjudul\":\"akal\",\r\n    \"deskripsi\":\"askoidjkdopkpaksopfkdomsmdaojzjfdsnfjcKsiamamwoiamoasmemewmmdeefaemm\",\r\n    \"kesimpulan\":\"loreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesdpasdspadopmsfdmsldfmdkfmcdkmcsl,subJudul\", \r\n    \"subbabId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/quiz",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/quiz/1",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"quiz",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateQuiz",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question\":\"apa aku manuk\", \r\n    \"a\":\"akal\",\r\n    \"b\":\"bykan\",\r\n    \"c\":\"api\", \r\n    \"d\":\"yaa rr\", \r\n    \"key\":\"a\", \r\n    \"bookId\": 1 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/quiz/1",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"quiz",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteQuiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgwNzA0NDA2LCJleHAiOjE2ODA3MDgwMDZ9.U2iVJESRJxxoD7EEVjSr8PS5is_bcp8aE62ZLd5O8ng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/quiz/1",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"quiz",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "AddBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\":\"Araceer\", \r\n    \"deskripsi\":\"ecu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/book",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBook",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\":\"apa aku manuk\", \r\n    \"subjudul\":\"akal\",\r\n    \"deskripsi\":\"askoidjkdopkpaksopfkdomsmdaojzjfdsnfjcKsiamamwoiamoasmemewmmdeefaemm\",\r\n    \"kesimpulan\":\"loreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesdpasdspadopmsfdmsldfmdkfmcdkmcsl,subJudul\", \r\n    \"subbabId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/book",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/book/1",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"book",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBook",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\":\"Remaja\", \r\n    \"deskripsi\":\"bukan anak anak\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/book/3",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"book",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteBook",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgwNzA0NDA2LCJleHAiOjE2ODA3MDgwMDZ9.U2iVJESRJxxoD7EEVjSr8PS5is_bcp8aE62ZLd5O8ng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/book/5",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"book",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Materi",
+			"item": [
+				{
+					"name": "AddSubJudul",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\":\"apa aku manuk\", \r\n    \"submateri\":\"almdmkMKANDKMASLmSDLMDASMdASL:DALPQLPQLWpL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/materi/sub",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"materi",
+								"sub"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddMateri",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgwNzA0NDA2LCJleHAiOjE2ODA3MDgwMDZ9.U2iVJESRJxxoD7EEVjSr8PS5is_bcp8aE62ZLd5O8ng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\":\"apa aku manuk\", \r\n    \"materi\":\"asodjioajdsijaijsjijdsijdasiasjaskdokopakowkoamdksmloreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesdpasdspadopmsfdmsldfmdkfmcdkm\",\r\n    \"submateriId\":3, \r\n    \"bookId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/materi",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"materi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMateri",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\":\"apa aku manuk\", \r\n    \"isi\":\"almdmkMKANDKMASLmSDLMDASMdASL:DALPQLPQLWpL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/materi",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"materi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMateri",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgwNzA0NDA2LCJleHAiOjE2ODA3MDgwMDZ9.U2iVJESRJxxoD7EEVjSr8PS5is_bcp8aE62ZLd5O8ng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\":\"apa aku manuk\", \r\n    \"materi\":\"1osdkokoajdsijaijsjijdsijdasiasjaskdokopakowkoamdksmlore2eeeeeeeeeeeeeeeeeeeeeeeeeeesdpasdspadopmsfdmsldfmdkfmcdkm\",\r\n    \"submateriId\":1, \r\n    \"bookId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/materi/1",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"materi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSubJudul",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\":\"apa aku manuk\", \r\n    \"submateri\":\"almdmkMKANDKMASLmSDLMDASMdASL:DQakldjoaeoLWpL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/materi/sub/1",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"materi",
+								"sub",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteQuiz",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{port}}/materi/sub/1",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"materi",
+								"sub",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jobsheet",
+			"item": [
+				{
+					"name": "AnswerOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgwNzA0NDA2LCJleHAiOjE2ODA3MDgwMDZ9.U2iVJESRJxxoD7EEVjSr8PS5is_bcp8aE62ZLd5O8ng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 2,\r\n  \"answer\": \"a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/jobsheet/One",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"jobsheet",
+								"One"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AnswerMany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgwNzA0NDA2LCJleHAiOjE2ODA3MDgwMDZ9.U2iVJESRJxxoD7EEVjSr8PS5is_bcp8aE62ZLd5O8ng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":[\r\n    1,\r\n    2,\r\n    3,\r\n    4\r\n    ],\r\n  \"answer\": [\r\n    \"a\",\r\n    \"d\",\r\n    \"c\",\r\n    \"b\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/jobsheet/Many",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"jobsheet",
+								"Many"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AnswerbybookId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":[\r\n    1,\r\n    2,\r\n    3,\r\n    4\r\n    ],\r\n  \"answer\": [\r\n    \"a\",\r\n    \"d\",\r\n    \"c\",\r\n    \"b\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port}}/jobsheet/bookid/1",
+							"host": [
+								"{{port}}"
+							],
+							"path": [
+								"jobsheet",
+								"bookid",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

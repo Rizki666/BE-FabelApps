@@ -1,13 +1,13 @@
-const db = require("../models");
-const Quiz = db.quizzes;
+const db = require('../models')
+const quiz = db.quiz
 
-//CREATE
-exports.create = async (req, res) => {
+// CREATE
+const create = async (req, res) => {
 
     try {
-        const data = await Quiz.create(req.body)
+        const data = await quiz.create(req.body)
         res.json({
-            message: "Quiz berhasil dibuat.",
+            message: "quiz berhasil dibuat.",
             data: data,
         })
     } catch (error) {
@@ -19,9 +19,9 @@ exports.create = async (req, res) => {
 }
 
 //MENAMPILKAN SEMUA DATA
-exports.getAll = async (req, res) => {
+const getAll = async (req, res) => {
     try {
-        const quizzes = await Quiz.findAll()
+        const quizzes = await quiz.findAll()
         res.json({
             message: "Quizzes retrieved successfully",
             data: quizzes,
@@ -36,19 +36,18 @@ exports.getAll = async (req, res) => {
 }
 
 //MENGUBAH DATA
-exports.update = async (req, res) => {
+const update = async (req, res) => {
     const id = req.params.id
     try {
-        const quiz = await Quiz.findByPk(id, {rejectOnEmpty: true})
-        quiz.update(req.body, {
+        await quiz.update(req.body, {
             where: {id}
         })
+        const data = await quiz.findByPk(id, {rejectOnEmpty: true})
         res.json({
-            message: "Quizzes updated successfully",
-            data: quiz,
+            message: "quiz updated successfully",
+            data: data,
         })
-    }
-    catch (error) {
+    } catch (error) {
         res.status(500).json({
             message: error.message || "Some error occured while retrieving quiz",
             data: null,
@@ -57,14 +56,15 @@ exports.update = async (req, res) => {
 }
 
 //MENGHAPUS
-exports.delete = async (req, res) => {
+const deleteQuiz = async (req, res) => {
     const id = req.params.id
     try {
-        const quiz = await Quiz.findByPk(id, {rejectOnEmpty: true})
+        const quizzes = await quiz.findByPk(id, {rejectOnEmpty: true})
         quiz.destroy()
 
         res.json({
-            message: 'Quiz deleted successfully'
+            message: 'quiz deleted successfully',
+            quiz : quizzes
         })
     }
     catch (error) {
@@ -76,13 +76,24 @@ exports.delete = async (req, res) => {
 }
 
 //MENAMPILKAN DATA QUIZ BERDASARKAN ID TERTENTU
-exports.findOne = async (req, res) => {
+const findOne = async (req, res) => {
     const id = req.params.id
     try {
-        const quiz = await Quiz.findByPk(id, {rejectOnEmpty: true})
+        const quizzes = await quiz.findOne({
+            where: {
+                id: id
+            },
+            include: [
+                {
+                    model: db.book,
+                    as: 'book',
+                    attributes: ['id', 'judul', 'deskripsi']
+                }
+            ]
+        })
         res.json({
             message: `Quizzes retrieved successfully with id=${id}`,
-            data: quiz
+            data: quizzes
         })
     }
     catch (error) {
@@ -93,12 +104,12 @@ exports.findOne = async (req, res) => {
     }
 }
 
-//MENAMPILKAN DATA QUIZ BERDASARKAN KATEGORI TERTENTU
-exports.getByCategoryId = async (req, res) => {
+//MENAMPILKAN DATA QUIZ BERDASARKAN KATEGORI BUKU TERTENTU
+const getByBookId = async (req, res) => {
     const id = req.params.id
-    const quizzes = await Quiz.findAll({
+    const quizzes = await quiz.findAll({
         where: {
-            categoryId: id
+            bookId: id
         }
     })
     res.json({
@@ -107,16 +118,12 @@ exports.getByCategoryId = async (req, res) => {
     })
 }
 
-//MENAMPILKAN DATA QUIZ BERDASARKAN LEVEL TERTENTU
-exports.getByLevelId = async (req, res) => {
-    const id = req.params.id
-    const quizzes = await Quiz.findAll({
-        where: {
-            levelId: id
-        }
-    })
-    res.json({
-        message: `Quizzes retrieved successfully with levelId=${id}`,
-        data: quizzes,
-    })
+
+module.exports = {
+    create,
+    getAll,
+    update,
+    deleteQuiz,
+    findOne,
+    getByBookId
 }
